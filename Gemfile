@@ -1,14 +1,14 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.0'
+gem "ruby-debug"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
-
 gem 'stead', '0.0.3'
-
+gem 'formtastic', '~> 1.1.0'
 
 group :development do
   gem 'rspec-rails', '2.0.0.beta.20'
@@ -16,6 +16,7 @@ end
 
 group :test do
   gem 'rspec', '2.0.0.beta.20'
+  gem 'webrat'
 end
 # Use unicorn as the web server
 # gem 'unicorn'
