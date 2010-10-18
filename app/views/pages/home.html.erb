@@ -1,7 +1,12 @@
-<h1><%= @title %></h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<%= form_for :upload, :html => { :multipart => true } do |f| -%>
-  <%= f.file_field :csv %>
-  <%= f.submit "Upload", :disable_with => 'Uploading...' %>
-<% end -%>
+<h2>The Problem</h2>
+<p>
+  Donors sometimes give a collection to an archive and include a spreadsheet. 
+</p>
+<h2>The Solution</h2>
+<p>
+  What if you could massage the spreadsheet a bit and then get valid EAD XML
+  back?
+</p>
+
+<%= link_to 'Try stead!', csv_import_path %>
 

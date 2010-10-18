@@ -7,15 +7,15 @@ gem "ruby-debug"
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
-gem 'stead', '0.0.3'
+gem 'stead', '0.0.4'
 gem 'formtastic', '~> 1.1.0'
 
-group :development do
-  gem 'rspec-rails', '2.0.0.beta.20'
+group :development, :test do
+  gem 'rspec-rails', '>= 2.0.1'
 end
 
 group :test do
-  gem 'rspec', '2.0.0.beta.20'
+  #gem 'rspec', '2.0.0'
   gem 'webrat'
 end
 # Use unicorn as the web server
