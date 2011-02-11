@@ -1,5 +1,6 @@
 class CsvController < ApplicationController
   def import
+    @title = 'Upload CSV'
   end
 
   def upload
