@@ -6,8 +6,9 @@
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
-<body>
-  <h1>Steady</h1>
+<body class="rounded">
+  <h1><%= link_to 'Steady', pages_home_path %></h1>
+  <%= render :partial => '/layouts/menu' %>
 <%= yield %>
 
 </body>
