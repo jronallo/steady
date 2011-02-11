@@ -1,12 +1,16 @@
 <h2>The Problem</h2>
 <p>
-  Donors sometimes give a collection to an archive and include a spreadsheet. 
+  Donors sometimes give a collection to an archive and include a spreadsheet
+  container list. 
 </p>
 <h2>The Solution</h2>
 <p>
-  What if you could massage the spreadsheet a bit and then get valid EAD XML
+  What if you could edit the spreadsheet just a bit and then get valid EAD XML
   back?
 </p>
 
-<%= link_to 'Try stead!', csv_import_path %>
+<p>Save time.</p>
 
+<div id="try">
+  <%= link_to 'Try stead!', csv_import_path, :class => 'rounded' %>
+</div>
