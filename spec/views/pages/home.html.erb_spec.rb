@@ -13,8 +13,21 @@ describe "pages/home.html.erb" do
     rendered.should have_selector('h2', :content => 'The Problem')
     rendered.should have_selector('p', :content => 'Donors sometimes')
     rendered.should have_selector('h2', :content => 'The Solution')
-    rendered.should have_selector('a', :content => 'Try stead!')
     rendered.should_not have_selector('form')
+  end
+  
+  it 'should have a menu to other pages' do
+    pending
+    render 
+    rendered.should have_selector('a', :content => 'contact')
+    rendered.should have_selector('a', :content => 'about')
+  end
+  
+  it 'should direct the user to try the application' do
+    render
+    rendered.should have_selector('div', :id => 'try') do |div|
+      div.should have_selector('a', :content => 'Try stead!')
+    end
   end
   
 end

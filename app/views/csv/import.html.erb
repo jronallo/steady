@@ -1,7 +1,134 @@
 <h2>Upload</h2>
 <p>Choose a CSV file to upload. The file must have headers which conform to the
-stead schema.</p>
+<%= link_to 'stead schema', '#schema' %>. 
+</p>
+<p>
+You can try it out with a 
+<%= link_to 'sample CSV file', File.join(root_path, 'sample.csv') %>.
+</p>
+
+<% if flash[:notice] -%>
+  <div id="notice" class="rounded">
+    <%= flash[:notice] %>
+  </div>
+<% end -%>
+
 <%= form_for :upload, :html => { :multipart => true } do |f| -%>
   <%= f.file_field :csv %>
-  <%= f.submit "Upload", :disable_with => 'Uploading...' %>
+  <%= f.submit "Upload", :disable_with => 'Uploading...',
+    :class=> 'rounded' %>
 <% end -%>
+
+<h2 id="schema">Stead schema</h2>
+<p>These are the allowable values for the CSV header row. All values apply at
+the container level except the values that apply to the series or subseries level.</p>
+<dl>
+  <dt>series title</dt>
+  <dd></dd>
+
+  <dt>series number</dt>
+  <dd></dd>
+  
+  <dt>series dates</dt>
+  <dd></dd>
+  
+  <dt>subseries number</dt>
+  <dd></dd>
+  
+  <dt>subseries title</dt>
+  <dd></dd>
+  
+  <dt>subseries dates</dt>
+  <dd></dd>
+  
+  <dt>file id</dt>
+  <dd></dd>
+  
+  <dt>file title</dt>
+  <dd></dd>
+  
+  <dt>file dates</dt>
+  <dd></dd>
+  
+  <dt>extent</dt>
+  <dd></dd>
+  
+  <dt>physdesc</dt>
+  <dd></dd>
+  
+  <dt>internal only</dt>
+  <dd></dd>
+  
+  <dt>restrictions</dt>
+  <dd></dd>
+  
+  <dt>conditions governing access</dt>
+  <dd></dd>
+  
+  <dt>scopecontent</dt>
+  <dd></dd>
+  
+  <dt>note1</dt>
+  <dd></dd>
+  
+  <dt>note2</dt>
+  <dd></dd>
+  
+  <dt>instance type</dt>
+  <dd></dd>
+  
+  <dt>container 1 type</dt>
+  <dd></dd>
+  
+  <dt>container 1 number</dt>
+  <dd></dd>
+  
+  <dt>container 2 type</dt>
+  <dd></dd>
+  
+  <dt>container 2 number</dt>
+  <dd></dd>
+  
+  <dt>container 3 type</dt>
+  <dd></dd>
+  
+  <dt>container 3 number</dt>
+  <dd></dd>
+  
+  <dt>geogname</dt>
+  <dd></dd>
+  
+  <dt>geogname_source</dt>
+  <dd></dd>
+  
+  <dt>corpname</dt>
+  <dd></dd>
+  
+  <dt>corpname_source</dt>
+  <dd></dd>
+  
+  <dt>famname</dt>
+  <dd></dd>
+  
+  <dt>famname_source</dt>
+  <dd></dd>
+  
+  <dt>name</dt>
+  <dd></dd>
+  
+  <dt>name_source</dt>
+  <dd></dd>
+  
+  <dt>persname</dt>
+  <dd></dd>
+  
+  <dt>persname_source</dt>
+  <dd></dd>
+  
+  <dt>subject</dt>
+  <dd></dd>
+  
+  <dt>subject_source</dt>
+  <dd></dd>
+
+</dl>

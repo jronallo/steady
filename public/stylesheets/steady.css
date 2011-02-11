@@ -1,0 +1,58 @@
+html {background-color: black;}
+
+body {background-color: white; margin: 50px;
+    padding: 10px 25px 25px 25px;
+}
+
+a {text-decoration:none; color: green;}
+a:hover{text-decoration: underline; color: black;}
+
+#menu { float: right;}
+#menu a{
+    background-color: black;
+    font-weight: bold;
+    padding: 10px;    
+}
+#menu a:hover{color: white; background-color: green;}
+
+
+#try {margin: 50px;}
+#try a{
+    font-size: 100px; 
+    font-weight: bold;
+    background-color: green; 
+    padding: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+#try a:hover{
+    background-color: black;    
+}
+
+/*#upload_submit {*/
+/*    background-color: green;*/
+/*    font-weight: bold;*/
+/*    padding: 10px; */
+/*    color: white;*/
+/*    border: none;*/
+/*}*/
+/*#upload_submit:hover {*/
+/*    background-color: black;*/
+/*}*/
+
+dd {color: #636363}
+
+.rounded {
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+#notice{
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    border: 2px solid black;
+    padding: 10px;
+    margin: 20px;
+}
