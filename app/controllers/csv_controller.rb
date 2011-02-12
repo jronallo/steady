@@ -13,7 +13,7 @@ class CsvController < ApplicationController
         @upload.csv.rewind
         ead_generator = Stead::EadGenerator.from_csv(@upload.csv.read)
         ead = ead_generator.to_ead
-        send_data ead, :filename => 'ead.xml'
+        send_data ead, :filename => @upload.csv.original_filename + '-ead.xml'
       else
         render csv_import_path
       end      
