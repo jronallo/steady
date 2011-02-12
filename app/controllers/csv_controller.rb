@@ -15,6 +15,7 @@ class CsvController < ApplicationController
         ead = ead_generator.to_ead
         send_data ead, :filename => @upload.csv.original_filename + '-ead.xml'
       else
+        @title = 'Upload CSV Errors'
         render csv_import_path
       end      
     rescue => e
