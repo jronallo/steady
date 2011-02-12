@@ -16,6 +16,17 @@ Steady::Application.configure do
 
   # Don't care if the mailer can't send
   config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  # $ export GMAIL_SMTP_USER=username@gmail.com
+  # $ export GMAIL_SMTP_PASSWORD=yourpassword
+  config.action_mailer.smtp_settings = {
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :domain               => 'heroku.com',
+    :user_name            => ENV['GMAIL_SMTP_USER'],
+    :password             => ENV['GMAIL_SMTP_PASSWORD'],
+    :authentication       => 'plain',
+    :enable_starttls_auto => true  }
   
 #  config.action_mailer.delivery_method = :sendmail
 #  config.action_mailer.perform_deliveries = true
