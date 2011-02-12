@@ -15,7 +15,7 @@ Steady::Application.configure do
   config.action_mailer.smtp_settings = {
     :address              => "smtp.gmail.com",
     :port                 => 587,
-    :domain               => ENV['GMAIL_SMTP_USER'],
+    :domain               => 'gmail.com',
     :user_name            => ENV['GMAIL_SMTP_USER'],
     :password             => ENV['GMAIL_SMTP_PASSWORD'],
     :authentication       => 'plain',
