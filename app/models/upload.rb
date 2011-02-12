@@ -7,7 +7,8 @@ class Upload
 
   attr_accessor :name, :email, :organization, :csv
   
-  validates_presence_of :name, :email, :csv
+  validates_presence_of :name, :csv
+  validates :email, :presence => true, :email_format => true
 
   def initialize(attributes = {})
     attributes.each do |name, value|

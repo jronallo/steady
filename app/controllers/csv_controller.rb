@@ -8,11 +8,18 @@ class CsvController < ApplicationController
     begin
       @upload = Upload.new(params[:upload])
       UseMailer.use_email(@upload).deliver
+      
+      if @upload.csv.nil?
+        flash[:notice] = 'You did not upload a CSV file. Please choose a file.'
+        redirect_to csv_import_path
+        return
+      end      
+      
       if @upload.valid?
         @upload.csv.rewind
         ead_generator = Stead::EadGenerator.from_csv(@upload.csv.read)
         ead = ead_generator.to_ead
-        render :xml => ead
+        send_data ead, :filename => 'ead.xml'
       else
         render csv_import_path
       end      

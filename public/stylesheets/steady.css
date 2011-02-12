@@ -30,6 +30,25 @@ a:hover{text-decoration: underline; color: black;}
     background-color: black;    
 }
 
+
+#try_another {
+    display: none;
+    background-color: green;
+    border: 2px solid black;
+    font-weight: bold;
+    padding: 10px;
+    margin: 10px;
+}
+
+#try_another a {
+    background-color: black;
+    padding: 10px;
+}
+
+#try_another a:hover {
+    color: white;
+}
+
 /*#upload_submit {*/
 /*    background-color: green;*/
 /*    font-weight: bold;*/
@@ -48,7 +67,7 @@ dd {color: #636363}
     border-radius: 10px;
 }
 
-#notice{
+#notice, #errors{
     background-color: red;
     color: white;
     font-weight: bold;

@@ -13,16 +13,19 @@ You can try it out with a
   </div>
 <% end -%>
 
-<%= semantic_form_for :upload, :html => { :multipart => true } do |f| -%>
+<%= semantic_form_for :upload, :html => { :multipart => true, :id => 'upload_form' } do |f| -%>
   <%= render "shared/error_messages", :target => @upload %> 
-  <%= f.input :name %>
-  <%= f.input :email %>
-  <%= f.input :organization %>
-  <%= f.input :csv, :as => :file %>
-  <%= f.submit :upload, :disable_with => 'Uploading...' %>
-  <%#= f.submit "Upload", :disable_with => 'Uploading...',
-    :class=> 'rounded' %>
+  <%= f.input :name, :input_html => {:value => params[:name]} %>
+  <%= f.input :email, :input_html => {:value => params[:email]} %>
+  <%= f.input :organization, :required => false %>
+  <%= f.input :csv, :as => :file, :label => "CSV file to upload" %>
+  <%= f.submit :upload, :disable_with => 'Processing your CSV into EAD XML...' %>
 <% end -%>
+
+<div id="try_another" class="rounded">
+  <p>Please wait for and accept the download of the EAD XML.</p>
+  <p><%= link_to 'Try another', csv_import_path, :class => 'rounded' %></p>
+</div>
 
 <h2 id="schema">Stead schema</h2>
 <p>These are the allowable values for the CSV header row. All values apply at

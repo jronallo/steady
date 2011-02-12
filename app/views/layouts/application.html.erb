@@ -3,7 +3,8 @@
 <head>
   <title>Steady | <%= @title %></title>
   <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
+  <%= formtastic_stylesheet_link_tag %>
+  <%= javascript_include_tag 'jquery-1.5.min', 'steady' %>
   <%= csrf_meta_tag %>
 </head>
 <body class="rounded">

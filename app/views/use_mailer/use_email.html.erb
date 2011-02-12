@@ -8,7 +8,9 @@
     <p>email: <%= @upload.email %></p>
     <p>name: <%= @upload.name %></p>
     <p>organization: <%= @upload.organization %></p>
-    
+    <% if !@upload.csv -%>
+      <p>There was no file uploaded.</p>
+    <% end -%>
 
   </body>
 </html>
