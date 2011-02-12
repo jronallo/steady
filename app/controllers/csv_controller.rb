@@ -17,7 +17,7 @@ class CsvController < ApplicationController
         render csv_import_path
       end      
     rescue => e
-      Rails.logger.debug([e.inspect, e.backtrace.join("\n")].join(''))
+      Rails.logger.error([e.inspect, e.backtrace.join("\n")].join(''))
       flash[:notice] = 'There was an error processing the CSV file. ' +
       'It may be an error in your CSV file or a bug within the program. ' +
       'Please try again.'
