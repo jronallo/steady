@@ -5,6 +5,7 @@ require File.expand_path('../application', __FILE__)
 Steady::Application.initialize!
 
 Steady::Application.configure do
+  
   config.action_mailer.delivery_method = :smtp
   # $ export GMAIL_SMTP_USER=username@gmail.com
   # $ export GMAIL_SMTP_PASSWORD=yourpassword
