@@ -15,9 +15,9 @@ You can try it out with a
 
 <%= semantic_form_for :upload, :html => { :multipart => true, :id => 'upload_form' } do |f| -%>
   <%= render "shared/error_messages", :target => @upload %> 
-  <%= f.input :name, :input_html => {:value => params[:name]} %>
-  <%= f.input :email, :input_html => {:value => params[:email]} %>
-  <%= f.input :organization, :required => false %>
+  <%= f.input :name, :input_html => {:value => input_value_from_params(params, :name)  } %>
+  <%= f.input :email, :input_html => {:value => input_value_from_params(params, :email)} %>
+  <%= f.input :organization, :required => false, :input_html => {:value => input_value_from_params(params, :organization)} %>
   <%= f.input :csv, :as => :file, :label => "CSV file to upload" %>
   <%= f.submit :upload, :disable_with => 'Processing your CSV into EAD XML...' %>
 <% end -%>
