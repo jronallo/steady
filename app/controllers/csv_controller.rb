@@ -1,14 +1,22 @@
 class CsvController < ApplicationController
   def import
     @title = 'Upload CSV'
+    @upload = Upload.new
   end
 
   def upload
     begin
-      ead_generator = Stead::EadGenerator.from_csv(params[:upload][:csv].read)
-      ead = ead_generator.to_ead
-      render :xml => ead
-    rescue
+      @upload = Upload.new(params[:upload])
+      UseMailer.use_email(@upload).deliver
+      if @upload.valid?
+        @upload.csv.rewind
+        ead_generator = Stead::EadGenerator.from_csv(@upload.csv.read)
+        ead = ead_generator.to_ead
+        render :xml => ead
+      else
+        render csv_import_path
+      end      
+    rescue => e
       flash[:notice] = 'There was an error processing the CSV file. ' +
       'It may be an error in your CSV file or a bug within the program. ' +
       'Please try again.'

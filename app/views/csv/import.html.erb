@@ -13,9 +13,14 @@ You can try it out with a
   </div>
 <% end -%>
 
-<%= form_for :upload, :html => { :multipart => true } do |f| -%>
-  <%= f.file_field :csv %>
-  <%= f.submit "Upload", :disable_with => 'Uploading...',
+<%= semantic_form_for :upload, :html => { :multipart => true } do |f| -%>
+  <%= render "shared/error_messages", :target => @upload %> 
+  <%= f.input :name %>
+  <%= f.input :email %>
+  <%= f.input :organization %>
+  <%= f.input :csv, :as => :file %>
+  <%= f.submit :upload, :disable_with => 'Uploading...' %>
+  <%#= f.submit "Upload", :disable_with => 'Uploading...',
     :class=> 'rounded' %>
 <% end -%>
 
