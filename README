@@ -1,5 +1,13 @@
 == Steady
 
 CSV in EAD XML out. A simple Rails application using the stead gem to allow 
-users to upload a CSV file with the proper headers and then output valid EAD
+users to upload a CSV file with the proper header row and then output valid EAD
 XML.
+
+== Author
+
+Jason Ronallo
+
+== Copyright
+
+Copyright (c) 2010 North Carolina State University. See LICENSE for details.
