@@ -12,7 +12,7 @@
   <h1><%= link_to 'Steady', pages_home_path %></h1>
   <%= render :partial => '/layouts/menu' %>
   <%= yield %>
-  <%= render :partial => '/layouts/disqus' %>
+  <%= render :partial => '/layouts/disqus' unless params[:action] == 'home' %>
 </body>
 </html>
 
