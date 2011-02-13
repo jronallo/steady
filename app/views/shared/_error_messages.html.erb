@@ -1,4 +1,4 @@
-<% if target.errors.any? %>  
+<% if target and target.errors.any? %>  
 <div id="errors" class="rounded">  
   <h2><%= pluralize(target.errors.count, "error") %> prohibited this upload from being processed:</h2>  
   <ul>  
