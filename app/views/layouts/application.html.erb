@@ -11,8 +11,8 @@
 <body class="rounded">
   <h1><%= link_to 'Steady', pages_home_path %></h1>
   <%= render :partial => '/layouts/menu' %>
-<%= yield %>
-
+  <%= yield %>
+  <%= render :partial => '/layouts/disqus' %>
 </body>
 </html>
 
