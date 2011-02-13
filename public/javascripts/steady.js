@@ -21,7 +21,15 @@ $(document).ready(function() {
         });
         
         $('#try_another').show(4000);
+        _gaq.push(['_trackEvent', 'upload', 'submit']);
         $('#upload_form').submit();
+    });
+    
+    $('#upload_csv').live('click', function(){
+        _gaq.push(['_trackEvent', 'upload', 'csv']);       
+    });
+    $('#try_another a').live('click', function(){
+        _gaq.push(['_trackEvent', 'upload', 'try_another']);       
     });
     
 
