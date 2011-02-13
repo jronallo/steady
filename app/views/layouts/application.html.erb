@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Steady | <%= @title %></title>
-  <%= stylesheet_link_tag :all %>
+  <%= stylesheet_link_tag :all, :cache => false %>
   <%= formtastic_stylesheet_link_tag %>
   <%= javascript_include_tag 'jquery-1.5.min', 'steady' %>
   <%= csrf_meta_tag %>
