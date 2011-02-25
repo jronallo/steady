@@ -9,6 +9,7 @@ gem "ruby-debug"
 
 gem 'stead', '0.0.7'
 gem 'formtastic', '~> 1.1.0'
+gem 'fastercsv', '>= 1.5.0'
 
 group :development, :test do
   gem 'sqlite3-ruby', :require => 'sqlite3'
