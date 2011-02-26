@@ -7,7 +7,7 @@ gem "ruby-debug"
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 
-gem 'stead', '0.0.7'
+gem 'stead', '0.0.8'
 gem 'formtastic', '~> 1.1.0'
 gem 'fastercsv', '>= 1.5.0'
 
