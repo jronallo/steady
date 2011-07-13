@@ -10,7 +10,7 @@ You can try it out with a
 
 <% if flash[:notice] -%>
   <div id="notice" class="rounded">
-    <%= flash[:notice] %>
+    <%= flash[:notice].html_safe %>
   </div>
 <% end -%>
 
