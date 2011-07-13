@@ -1,18 +1,19 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.0'
-gem "ruby-debug"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 
-gem 'stead', '0.0.7'
+gem 'stead', '0.0.8'
 gem 'formtastic', '~> 1.1.0'
+gem 'fastercsv', '>= 1.5.0'
 
 group :development, :test do
   gem 'sqlite3-ruby', :require => 'sqlite3'
   gem 'rspec-rails', '>= 2.0.1'
+  gem "ruby-debug"
 end
 
 group :test do

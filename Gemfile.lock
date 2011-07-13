@@ -123,7 +123,7 @@ GEM
     sqlite3 (1.3.3)
     sqlite3-ruby (1.3.3)
       sqlite3 (>= 1.3.3)
-    stead (0.0.7)
+    stead (0.0.8)
       fastercsv (>= 1.5.0)
       nokogiri (>= 1.4.1)
       trollop (>= 1.16.2)
@@ -147,10 +147,11 @@ DEPENDENCIES
   capybara
   cucumber-rails
   database_cleaner
+  fastercsv (>= 1.5.0)
   formtastic (~> 1.1.0)
   rails (= 3.0.0)
   rspec-rails (>= 2.0.1)
   ruby-debug
   sqlite3-ruby
-  stead (= 0.0.7)
+  stead (= 0.0.8)
   webrat
