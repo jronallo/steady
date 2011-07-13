@@ -10,6 +10,8 @@
     <p>organization: <%= @upload.organization %></p>
     <% if !@upload.csv -%>
       <p>There was no file uploaded.</p>
+    <% else -%>
+      <%= @upload.csv.original_filename if @upload.csv.original_filename %>
     <% end -%>
 
   </body>
