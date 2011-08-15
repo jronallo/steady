@@ -6,7 +6,7 @@ gem 'rails', '3.0.0'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 
-gem 'stead', '0.0.9'
+gem 'stead', '0.0.10'
 gem 'formtastic', '~> 1.1.0'
 gem 'fastercsv', '>= 1.5.0'
 
