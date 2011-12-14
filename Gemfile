@@ -6,7 +6,7 @@ gem 'rails', '3.0.0'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 
-gem 'stead', '0.0.11'
+gem 'stead', '0.0.12'
 gem 'formtastic', '~> 1.1.0'
 gem 'fastercsv', '>= 1.5.0'
 
@@ -14,6 +14,7 @@ group :development, :test do
   gem 'sqlite3-ruby', :require => 'sqlite3'
   gem 'rspec-rails', '>= 2.0.1'
   gem "ruby-debug"
+  gem "thin"
 end
 
 group :test do
