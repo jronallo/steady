@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'stead', github: 'jnronall/stead', branch: 'master'
+gem 'stead', git: 'https://github.com/jronallo/stead.git', branch: 'master'
 
 group :development do
   gem 'pry-rails'
@@ -8,7 +8,7 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
-gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass', branch: 'master'
+gem 'bootstrap-sass', git: 'https://github.com/thomas-mcdonald/bootstrap-sass.git', branch: 'master'
 
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'

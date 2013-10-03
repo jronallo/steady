@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/jnronall/stead.git
+  remote: https://github.com/jronallo/stead.git
   revision: 30df4c38ce8839cc8f7819cefda77d7787d05e04
   branch: master
   specs:
@@ -8,7 +8,7 @@ GIT
       trollop
 
 GIT
-  remote: git://github.com/thomas-mcdonald/bootstrap-sass.git
+  remote: https://github.com/thomas-mcdonald/bootstrap-sass.git
   revision: c0e12a90ba3e44ab68d3f153411fba3edc400b2a
   branch: master
   specs:
