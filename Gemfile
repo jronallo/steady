@@ -1,5 +1,10 @@
 source 'https://rubygems.org'
 
+# heroku
+# group :production do
+#   gem 'rails_12factor'
+# end
+
 gem 'stead', git: 'https://github.com/jronallo/stead.git', branch: 'master'
 
 group :development do
