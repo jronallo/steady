@@ -1,0 +1,92 @@
+<div class="row">
+  <div class="col-md-6">
+    <h1>Steady converts CSV into EAD XML</h1>
+
+    <h2>Upload</h2>
+    <p>Choose a CSV file to upload. The file must have headers which conform to the
+    <%= link_to 'stead schema', '#schema' %>. If you have your container list data in
+    Excel, you will need to export it as CSV before uploading it.
+    </p>
+    <p>
+    You can try it out with a
+    <%= link_to 'sample CSV file', File.join(root_path, 'sample.csv') %>.
+    </p>
+
+    <% if flash[:notice] -%>
+      <div id="notice" class="rounded">
+        <%= flash[:notice].html_safe %>
+      </div>
+    <% end -%>
+
+    <%= form_for @upload, url: csv_parse_path, :multipart => true, :html => { :id => 'upload_form' } do |f| -%>
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+      <%= f.label :email %>
+      <%= f.text_field :email, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+      <%= f.label :organization %>
+      <%= f.text_field :organization, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+      <%= f.label :csv %>
+      <%= f.file_field :csv %>
+      </div>
+
+      <%= f.submit :upload, id: :upload_btn  %>
+    <% end -%>
+
+    <div id="try_another" class="alert alert-info">
+      <p>Please wait for and accept the download of the EAD XML. Once this one completes just change the file to process another.</p>
+    </div>
+
+    <hr>
+
+    <%= render partial: '/pages/stead_schema' %>
+  </div>
+  <div class="col-md-6">
+    <div class="well">
+      <h2 id="about">About</h2>
+      <h3>Note</h3>
+      <div class="alert alert-warning">Due to the U.S. federal government shutdown, there were problems with validating EAD output from this tool. This functionality has been disabled for now until we can resolve the issue or the federal government reopens and the Library of Congress website returns.</div>
+      <h3>Use Cases</h3>
+      <p>In most cases tools like Archivists' Toolkit are preferred because they
+      centralize and normalize the creation of archival description and arrangement.
+      We have two main use cases for maintaining container lists in spreadsheets
+      instead of working directly in Archivists' Toolkit.</p>
+
+      <ol>
+        <li>Sometimes donors provide container lists for their collections as a
+        spreadsheet. In other cases hired appraisers will provide detailed spreadsheets
+        which could also be used as container lists. We want to be able to edit those
+        as little as possible to allow them to form the basis of a preliminary inventory.
+        In this way in MPLP-style we can make the collection accessible as quickly as possible.  </li>
+
+        <li>NCSU Libraries stores some of its architectural collections like
+        drawings in off-site storage. With poor wireless coverage in some areas it
+        is more convenient to enter container information in a spreadsheet off-line.
+        Also this allows several people to be working on a single collection
+        resource at one time. The spreadsheets can then be merged, exported to CSV,
+        and transformed to EAD XML.</li>
+      </ol>
+      <h3>Code</h3>
+      <p>Steady is a Ruby on Rails application and is available as open source software.
+      <%= link_to 'See the full source code.', 'https://github.com/jronallo/steady' %></p>
+      <h3 id="contact">Contact</h3>
+      <p>This little utility was developed by Jason Ronallo as part of his work at
+      NCSU Libraries.</p>
+      <p>email: <a href="mailto:jronallo@gmail.com">jronallo@gmail.com</a></p>
+
+      <h2>Problems or Issues?</h2>
+
+      <p>Please feel free to contact me about any issues you have with using Steady.
+      Please attach your CSV file and, if available, the EAD XML output from
+      this tool.</p>
+
+
+    </div>
+  </div>
+</div>

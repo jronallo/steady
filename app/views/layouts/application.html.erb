@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Steady | <%= @title %></title>
-  <%= stylesheet_link_tag 'steady', :cache => false %>
-  <%= formtastic_stylesheet_link_tag %>
-  <%= javascript_include_tag 'jquery-1.5.min', 'steady' %>
-  <%= csrf_meta_tag %>
-  <%= render :partial => '/layouts/google_analytics' %>
+  <title>Steady</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
 </head>
-<body class="rounded">
-  <h1><%= link_to 'Steady', pages_home_path %></h1>
-  <%= render :partial => '/layouts/menu' %>
-  <%= yield %>
-  <%= render :partial => '/layouts/disqus' unless params[:action] == 'home' %>
+<body>
+
+<%= render partial: '/layouts/navbar' %>
+
+<div class="container">
+<%= yield %>
+</div>
+
 </body>
 </html>
-
