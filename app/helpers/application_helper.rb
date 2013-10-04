@@ -11,4 +11,12 @@ module ApplicationHelper
     end
   end
 
+  def input_value_from_param(param)
+    if param
+      param
+    else
+      ''
+    end
+  end
+
 end

@@ -19,15 +19,15 @@
     <%= form_for @upload, url: csv_parse_path, :multipart => true, :html => { :id => 'upload_form' } do |f| -%>
       <div class="form-group">
         <%= f.label :name %>
-        <%= f.text_field :name, class: 'form-control' %>
+        <%= f.text_field :name, class: 'form-control', value: input_value_from_param(params[:name]) %>
       </div>
       <div class="form-group">
       <%= f.label :email %>
-      <%= f.text_field :email, class: 'form-control' %>
+      <%= f.text_field :email, class: 'form-control', value: input_value_from_param(params[:email]) %>
       </div>
       <div class="form-group">
       <%= f.label :organization %>
-      <%= f.text_field :organization, class: 'form-control' %>
+      <%= f.text_field :organization, class: 'form-control', value: input_value_from_param(params[:organization]) %>
       </div>
       <div class="form-group">
       <%= f.label :csv %>
