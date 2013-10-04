@@ -12,10 +12,8 @@
     <%= link_to 'sample CSV file', File.join(root_path, 'sample.csv') %>.
     </p>
 
-    <% if flash[:notice] -%>
-      <div id="notice" class="rounded">
-        <%= flash[:notice].html_safe %>
-      </div>
+    <% if @error -%>
+      <%= render partial: '/pages/errors' %>
     <% end -%>
 
     <%= form_for @upload, url: csv_parse_path, :multipart => true, :html => { :id => 'upload_form' } do |f| -%>

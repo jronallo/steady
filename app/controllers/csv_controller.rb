@@ -19,21 +19,21 @@ class CsvController < ApplicationController
         end_of_error_message
       flash[:notice] = notice
       params[:upload].delete(:csv)
-      redirect_to root_path(params[:upload])
+      redirect_to root_path(params[:upload].merge(error: :invalid_container_type))
     rescue CSV::MalformedCSVError => e
       Rails.logger.error(e.inspect)
       notice = 'The uploaded CSV file was invalid. Are you sure it is a CSV file? This is the error message given: ' +
         e.message + end_of_error_message
       flash[:notice] = notice
       params[:upload].delete(:csv)
-      redirect_to root_path(params[:upload])
+      redirect_to root_path(params[:upload].merge(error: :malformed_csv_error))
     rescue => e
       Rails.logger.error([e.inspect, e.backtrace.join("\n")].join(''))
       flash[:notice] = 'There was an error processing the CSV file. ' +
       'It may be an error in your CSV file or a bug within the program. ' +
       'Please try again. ' + end_of_error_message
       params[:upload].delete(:csv)
-      redirect_to root_path(params[:upload])
+      redirect_to root_path(params[:upload].merge(error: :unknown_error))
     end
   end
 
