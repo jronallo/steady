@@ -1,0 +1,4 @@
+email: <%= @upload.email %>
+name: <%= @upload.name %>
+organization: <%= @upload.organization if @upload.organization %>
+original filename: <%= @upload.csv.original_filename if @upload.csv and @upload.csv.original_filename %>

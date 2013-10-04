@@ -3,6 +3,12 @@ class CsvController < ApplicationController
     @upload = Upload.new(params[:upload])
 
     begin
+      UseMailer.use_email(@upload).deliver
+    rescue Net::SMTPAuthenticationError
+      Rails.logger.error('MAIL was not sent!')
+    end
+
+    begin
       if @upload.valid?
         @upload.csv.rewind
         ead_generator = Stead::EadGenerator.from_csv(@upload.csv.read)
