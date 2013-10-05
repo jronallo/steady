@@ -15,8 +15,7 @@ class CsvController < ApplicationController
         ead = ead_generator.to_ead
         send_data ead, :filename => @upload.csv.original_filename + '-ead.xml'
       else
-        @title = 'Upload CSV Errors'
-        render root_path
+        render '/pages/index'
       end
     rescue Stead::InvalidContainerType => e
       Rails.logger.error([e.inspect, e.backtrace.join("\n")].join(''))

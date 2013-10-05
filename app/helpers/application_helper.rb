@@ -12,8 +12,10 @@ module ApplicationHelper
   end
 
   def input_value_from_param(param)
-    if param
-      param
+    if @upload.send(param)
+      @upload.send(param)
+    elsif params[param]
+      params[param]
     else
       ''
     end

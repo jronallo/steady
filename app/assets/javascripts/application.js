@@ -12,5 +12,6 @@ $(function () {
   $('#upload_csv').on('click', function(e){
     $('#try_another').hide();
     $('#errors').hide();
+    $('#validation_errors').hide();
   });
 });
