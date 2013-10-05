@@ -16,7 +16,7 @@
       <%= render partial: '/pages/errors' %>
     <% end -%>
 
-    <% if !@upload.valid? && !@upload_error %>
+    <% if !@upload.valid? && params[:controller] != 'pages' %>
       <div class="alert alert-danger" id="validation_errors"><%= @upload.errors.full_messages.to_sentence %></div>
     <% end -%>
 
