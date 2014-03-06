@@ -2,14 +2,14 @@ source 'https://rubygems.org'
 
 gem 'newrelic_rpm'
 
-gem 'stead', git: 'https://github.com/jronallo/stead.git', branch: 'master'
+gem 'stead', '0.0.13'
 
 group :development do
   gem 'pry-rails'
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0'
+gem 'rails', '4.0.3'
 gem 'bootstrap-sass', git: 'https://github.com/thomas-mcdonald/bootstrap-sass.git', branch: 'master'
 
 # Use sqlite3 as the database for Active Record
