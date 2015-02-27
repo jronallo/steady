@@ -11,7 +11,11 @@ class CsvController < ApplicationController
     begin
       if @upload.valid?
         @upload.csv.rewind
-        ead_generator = Stead::EadGenerator.from_csv(@upload.csv.read)
+        options = {}
+        if params[:idcontainers]
+          options[:idcontainers] = true
+        end
+        ead_generator = Stead::EadGenerator.from_csv(@upload.csv.read, options)
         ead = ead_generator.to_ead
         send_data ead, :filename => @upload.csv.original_filename + '-ead.xml'
       else
