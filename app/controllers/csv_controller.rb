@@ -15,6 +15,9 @@ class CsvController < ApplicationController
         if params[:idcontainers]
           options[:idcontainers] = true
         end
+        [:unitid, :extent, :unitdate].each do |field|
+          options[field] = params[:upload][field]
+        end
         ead_generator = Stead::EadGenerator.from_csv(@upload.csv.read, options)
         ead = ead_generator.to_ead
         send_data ead, :filename => @upload.csv.original_filename + '-ead.xml'

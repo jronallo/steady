@@ -40,9 +40,22 @@
 
       <div class="form-group" id="archivesspace-extensions">
         <div class="well">
-        <p>To import correctly into ArchivesSpace and have instances created properly, you may need to add identifiers to containers. This is currently an experimental feature.</p>
-        <%= f.label :idcontainers, "Add identifiers to containers?" %>
-        <%= check_box_tag(:idcontainers) %>
+          <p>To import correctly into ArchivesSpace and have instances created properly, you may need to make some other changes to the EAD. This is currently an experimental feature. </p>
+          <%= f.label :idcontainers, "Add identifiers to containers for parent/child relationships?" %>
+          <%= check_box_tag(:idcontainers) %>
+
+          <div class="form-group">
+            <%= f.label :unitid, "archdesc/did/unitid" %>
+            <%= f.text_field :unitid, class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :extent, "archdesc/did/physdesc/extent" %>
+            <%= f.text_field :extent, class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :unitdate, "archdesc/did/unitdate" %>
+            <%= f.text_field :unitdate, class: 'form-control' %>
+          </div>
         </div>
       </div>
 

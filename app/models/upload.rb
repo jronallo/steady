@@ -2,7 +2,7 @@ class Upload
 
   include ActiveModel::Model
 
-  attr_accessor :name, :email, :organization, :csv
+  attr_accessor :name, :email, :organization, :csv, :unitid, :extent, :unitdate
 
   validates_presence_of :name, :csv
   validates :email, :presence => true
